@@ -1,9 +1,9 @@
 # Grunt Responsive Template
-> Best view IE9+
-> SCSS
-> SVG Icon : SVG or PNG Fallback ( GRUNTICON )
-> Minified JS : Concat JS files into one JS File (and minified Optional)
-> BrowserSync : Testing workflow faster by synchronising URLs, interactions and code changes across multiple devices
+- Best view IE9+
+- SCSS
+- SVG Icon : SVG or PNG Fallback ( GRUNTICON )
+- Minified JS : Concat JS files into one JS File (and minified Optional)
+- BrowserSync : Testing workflow faster by synchronising URLs, interactions and code changes across multiple devices
 
 ## ImgSlider Usage
     newSliderName = new imgSlider( $('target'), {
