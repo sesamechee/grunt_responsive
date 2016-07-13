@@ -829,24 +829,23 @@ img.mfp-img {
 /* line 25, ../src/scss/_img-slider.scss */
 .sliderWrapper .slides {
   position: absolute;
-  display: none;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   text-align: center;
 }
-/* line 34, ../src/scss/_img-slider.scss */
+/* line 33, ../src/scss/_img-slider.scss */
 .sliderWrapper .slides.on {
   position: relative;
   height: auto;
   display: block;
 }
-/* line 40, ../src/scss/_img-slider.scss */
+/* line 39, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderItem {
   position: relative;
 }
-/* line 43, ../src/scss/_img-slider.scss */
+/* line 42, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBtnNext,
 .sliderWrapper .sliderBtnPrev {
   position: absolute;
@@ -855,37 +854,37 @@ img.mfp-img {
   color: #000;
   z-index: 10;
 }
-/* line 51, ../src/scss/_img-slider.scss */
+/* line 50, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBtnNext {
   right: 10px;
 }
-/* line 54, ../src/scss/_img-slider.scss */
+/* line 53, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBtnPrev {
   left: 10px;
 }
-/* line 57, ../src/scss/_img-slider.scss */
+/* line 56, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBulletContainer {
   position: relative;
   text-align: center;
   width: 100%;
   padding: 10px 0;
 }
-/* line 63, ../src/scss/_img-slider.scss */
+/* line 62, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBullet {
   text-align: center;
 }
-/* line 65, ../src/scss/_img-slider.scss */
+/* line 64, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBullet a {
   display: inline-block;
   width: 10px;
   height: 10px;
   margin: 0 10px;
 }
-/* line 70, ../src/scss/_img-slider.scss */
+/* line 69, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBullet a.active .sliderBulletBg {
   background-color: #000;
 }
-/* line 75, ../src/scss/_img-slider.scss */
+/* line 74, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderBulletBg {
   display: block;
   width: 100%;
@@ -893,7 +892,7 @@ img.mfp-img {
   border-radius: 50%;
   border: 1px solid #000;
 }
-/* line 82, ../src/scss/_img-slider.scss */
+/* line 81, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnail {
   position: absolute;
   bottom: 0;
@@ -906,11 +905,11 @@ img.mfp-img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 92, ../src/scss/_img-slider.scss */
+/* line 91, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailContent {
   overflow: hidden;
 }
-/* line 95, ../src/scss/_img-slider.scss */
+/* line 94, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailItem {
   position: relative;
   display: inline-block;
@@ -920,7 +919,7 @@ img.mfp-img {
   margin-right: 20px;
   overflow: hidden;
 }
-/* line 104, ../src/scss/_img-slider.scss */
+/* line 103, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailItem img {
   position: absolute;
   width: 100%;
@@ -933,7 +932,7 @@ img.mfp-img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 114, ../src/scss/_img-slider.scss */
+/* line 113, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailItem:after {
   content: '';
   position: absolute;
@@ -951,11 +950,11 @@ img.mfp-img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 126, ../src/scss/_img-slider.scss */
+/* line 125, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailItem.active:after {
   border: 3px solid #fff;
 }
-/* line 129, ../src/scss/_img-slider.scss */
+/* line 128, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailPrev,
 .sliderWrapper .sliderThumbnailNext {
   position: absolute;
@@ -972,17 +971,17 @@ img.mfp-img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 142, ../src/scss/_img-slider.scss */
+/* line 141, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailPrev:hover,
 .sliderWrapper .sliderThumbnailNext:hover {
   opacity: 1;
 }
-/* line 146, ../src/scss/_img-slider.scss */
+/* line 145, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailPrev {
   background-color: rgba(0, 0, 0, 0.8);
   left: 0;
 }
-/* line 150, ../src/scss/_img-slider.scss */
+/* line 149, ../src/scss/_img-slider.scss */
 .sliderWrapper .sliderThumbnailNext {
   background-color: rgba(0, 0, 0, 0.8);
   right: 0;

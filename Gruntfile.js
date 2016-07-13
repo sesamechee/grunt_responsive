@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (grunt) {
 
 	// ===========================================================================
@@ -12,6 +14,7 @@ module.exports = function (grunt) {
 		// PATH SETTING ==============================================================
 		// ===========================================================================
 		paths: {
+			proxy: "http://github.ds078.pacim.local/grunt_responsive/",
 			img: 'src/images/',
 			imgOutput: 'images/',
 			css: 'src/scss/',
@@ -22,7 +25,7 @@ module.exports = function (grunt) {
 		bower_concat: {
 			all: {
 				dest: '<%= paths.jsOutput %>/bower.min.js',
-				exclude: [] // eg.'modernizr', 'jquery'
+				exclude: [] // eg.'modernizr', 'smoothscroll-for-websites'
 			}
 		},
 		concat: {
@@ -106,13 +109,27 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		browserSync: {
+			bsFiles: {
+				src : [
+					"**/*.html",
+					"<%= paths.cssOutput %>**/*.scss",
+					"<%= paths.jsOutput %>/*.js",
+					"<%= paths.img %>**/*.{png,jpg,gif}"
+				]
+			},
+			options: {
+				watchTask: true,
+				proxy: "<%= paths.proxy %>"
+			}
+		},
 		watch: {
 			scripts: {
 				files: '<%= paths.js %>/*.js',
-				tasks: ['jshint']
+				tasks: ['jshint', 'bower_concat', 'concat']
 			},
 			img: {
-				files: ['<%= paths.img %>**/*.{png,jpg,gif}'],
+				files: ['<%= paths.imgOutput %>**/*.{png,jpg,gif}'],
 				tasks: ['imagemin:dev', 'pngmin']
 			},
 			css: {
@@ -126,8 +143,8 @@ module.exports = function (grunt) {
 	// ===========================================================================
 	// ENVIRONMENT SETTING =======================================================
 	// ===========================================================================
-	grunt.registerTask('default', ['bower_concat', 'concat', 'jshint', 'imagemin:dev', 'pngmin', 'compass:dev', 'grunticon:myIcons']);
-	grunt.registerTask('prod', ['bower_concat', 'concat', 'jshint', 'uglify', 'imagemin:dev', 'pngmin', 'compass:prod', 'grunticon:myIcons']);
+	grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'imagemin:dev', 'pngmin', 'compass:dev', 'grunticon:myIcons', 'browserSync', 'watch']);
+	grunt.registerTask('prod', ['jshint', 'bower_concat', 'concat',  'uglify', 'imagemin:dev', 'pngmin', 'compass:prod', 'grunticon:myIcons']);
 	
 
 	// ===========================================================================
@@ -144,5 +161,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
 };

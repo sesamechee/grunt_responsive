@@ -11,6 +11,7 @@
 		"grunt-contrib-watch": "latest",
 		"grunt-contrib-imagemin" : "latest",
 		"grunt-contrib-compass" : "latest",
-		"grunt-grunticon" : "~2.2.1"
+		"grunt-grunticon" : "~2.2.1",
+		"grunt-browser-sync" : "~2.2.0"
 	}
 }
