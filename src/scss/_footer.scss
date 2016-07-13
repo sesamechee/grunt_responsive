@@ -1,0 +1,42 @@
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */     
+.footerWrapper{
+	position: relative;
+	background-color: #000;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	
+	.footer{
+		position: relative;
+		margin:0 auto;
+		padding: 20px;
+		max-width: $max-desktop-width;
+	}
+}
+
+.btnBackTop{
+	position: absolute;
+	top: -60px;
+	right: 10px;
+	background-color: #000;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	fill: #fff;
+	visibility: hidden;
+	@include opacity(0);
+	@include transition(all 0.3s);
+	
+	&.active{
+		visibility: visible;
+		@include opacity(1);
+	}
+	&.fixed{
+		position: fixed;
+		top: auto;
+		bottom: 10px;
+	}
+}
