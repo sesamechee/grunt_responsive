@@ -58,7 +58,7 @@ grunt prod
 - smoothscroll-for-websites : ~1.4.4
 
 ## Grunt plugin List
-- grunt": ~0.4.4
+- grunt: ~0.4.4
 - grunt-bower-concat: ~1.0.0
 - grunt-contrib-concat: ~1.0.1
 - grunt-contrib-jshint: ~1.0.0
