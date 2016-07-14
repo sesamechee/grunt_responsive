@@ -1,4 +1,5 @@
 # Grunt Responsive Template
+## Features
 - 3 Layout responsive ( desktop , tablet , mobile )
 - Best view IE9+
 - SCSS, compass
@@ -8,34 +9,34 @@
 - Grunt environment choose: default / prod
 
 ## Step to use
-1. Clone this template set to your project folder
-2. Download Node.js in [https://nodejs.org/en/](https://nodejs.org/en/)
-3. Install npm -- [Tutorial](https://docs.npmjs.com/getting-started/installing-node)
+Step 1: Clone this template set to your project folder
+Step 2: Download Node.js in [https://nodejs.org/en/](https://nodejs.org/en/)
+Step 3: Install npm -- [Tutorial](https://docs.npmjs.com/getting-started/installing-node)
 ```
 npm install npm -g
 ```
-4. Install grunt -- [Tutorial](http://gruntjs.com/getting-started)
+Step 4: Install grunt -- [Tutorial](http://gruntjs.com/getting-started)
 ```
 npm install -g grunt-cli
 ```
-4. Install bower -- [Tutorial](https://bower.io/#install-bower)
+Step 5. Install bower -- [Tutorial](https://bower.io/#install-bower)
 ```
 npm install -g bower
 ```
-5. Go to your project folder path
+Step 6. Go to your project folder path
 ```
 cd C:\project\client\project-name
 ```
-6. Run below command in every new project. It will generate assigned plugin component to "node_modules" and "bower_components" folder
+Step 7. Run below command in every new project. It will generate assigned plugin component to "node_modules" and "bower_components" folder
 ```
 npm install
 bower install
 ```
-7. Run grunt to watch folder. It will success with open new window with localhost testing server
+Step 8. Run grunt to watch folder. It will success with open new window with localhost testing server
 ```
 grunt
 ```
-8. Browser will auto refresh with any changes
+Step 9. Browser will auto refresh with any changes
 
 ## Bower plugin List
 - jquery: ~1.10.2
