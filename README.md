@@ -29,7 +29,8 @@ Step 6. Go to your project folder path
 ```
 cd C:\project\client\project-name
 ```
-Step 7. Run below command in every new project. It will generate assigned plugin component to "node_modules" and "bower_components" folder
+Step 7. Run below command in every new project. It will generate assigned plugin component to "node_modules" and "bower_components" folder.
+**_BUT DO NOT COMMIT ON SVN DUE TO THE LARGE AMOUNT OF FOLDERS_**
 ```
 npm install
 bower install
@@ -39,6 +40,11 @@ Step 8. Run grunt to watch folder. It will success with open new window with loc
 grunt
 ```
 Step 9. Browser will auto refresh with any changes
+
+Step 10. Or you may output as production mode which minified all js/css files.
+```
+grunt prod
+```
 
 ## Bower plugin List
 - jquery: ~1.10.2
