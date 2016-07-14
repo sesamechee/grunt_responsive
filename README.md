@@ -10,7 +10,9 @@
 
 ## Step to use
 Step 1: Clone this template set to your project folder
+
 Step 2: Download Node.js in [https://nodejs.org/en/](https://nodejs.org/en/)
+
 Step 3: Install npm -- [Tutorial](https://docs.npmjs.com/getting-started/installing-node)
 ```
 npm install npm -g
