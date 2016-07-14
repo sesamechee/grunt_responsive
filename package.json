@@ -3,14 +3,14 @@
 	"version": "0.1.0",
 	"devDependencies": {
 		"grunt": "~0.4.4",
-		"grunt-bower-concat": "latest",
-		"grunt-contrib-concat": "latest",
-		"grunt-contrib-jshint": "latest",
-		"jshint-stylish": "latest",
-		"grunt-contrib-uglify": "latest",
-		"grunt-contrib-watch": "latest",
-		"grunt-contrib-imagemin" : "latest",
-		"grunt-contrib-compass" : "latest",
+		"grunt-bower-concat": "~1.0.0",
+		"grunt-contrib-concat": "~1.0.1",
+		"grunt-contrib-jshint": "~1.0.0",
+		"jshint-stylish": "~2.2.0",
+		"grunt-contrib-uglify": "~1.0.1",
+		"grunt-contrib-watch": "~1.0.0",
+		"grunt-contrib-imagemin" : "~1.0.1",
+		"grunt-contrib-compass" : "~1.1.1",
 		"grunt-grunticon" : "~2.2.1",
 		"grunt-browser-sync" : "~2.2.0"
 	}
