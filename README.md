@@ -1,4 +1,6 @@
 # Grunt Responsive Template
+DEMO HERE: [https://sesamechee.github.io/grunt_responsive](https://sesamechee.github.io/grunt_responsive)
+
 ## Features
 - 3 Layout responsive ( desktop , tablet , mobile )
 - Best view IE9+
