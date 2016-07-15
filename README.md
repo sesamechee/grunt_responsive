@@ -70,7 +70,42 @@ grunt prod
 - grunt-grunticon : ~2.2.1
 - grunt-browser-sync : ~2.2.0
 
-## ImgSlider Usage
+## Common Commard
+### Popup Magnific popup box
+```
+popupBox( $(TARGET), {
+	showCloseBtn : true,
+	fixedContentPos : true,
+	fixedBgPos : true,
+	closeOnBgClick: true,
+	callbacks:{
+		open: function(){
+
+		},
+		close: function(){
+		
+		}
+	}
+});
+```
+### Popup Alert Msg
+```
+alertMsg( 'MSG HERE', config);
+```
+### Popup Youtube Video
+```
+videoPop( youtubeID , config );
+```
+### Inview effect
+```
+> It will add a class "play" when inview
+<div class="invew"></div>
+```
+### Scroll to target function
+```
+scrollto('.TARGET');
+```
+### ImgSlider Usage
 ```
 newSliderName = new imgSlider( $('target'), {
 	speed: 300,
