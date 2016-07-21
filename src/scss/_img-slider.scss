@@ -3,11 +3,11 @@
    ========================================================================== */     
 .sliderWrapper {
 	position: relative;
-	@include opacity(0);
-	@include transition(opacity 0.3s);
+	opacity: 0;
+	transition: opacity 0.3s;
 	
 	&.loaded{
-		@include opacity(1);
+		opacity: 1;
 	}
 
 	.sliderContainer {
@@ -86,7 +86,7 @@
 		height: 100px;
 		padding: 20px;
 		background-color: rgba(0,0,0,0.2);
-		@include box-sizing(border-box);
+		box-sizing: border-box;
 	}
 	.sliderThumbnailContent {
 		overflow: hidden;
@@ -108,7 +108,7 @@
 		right: 0;
 		bottom: 0;
 		margin: auto;
-		@include box-sizing(border-box);
+		box-sizing: border-box;
 	}
 	.sliderThumbnailItem:after{
 		content: '';
@@ -119,8 +119,8 @@
 		right: 0;
 		margin: auto;
 		border: 0 solid #fff;
-		@include transition(border 0.3s);
-		@include box-sizing(border-box);
+		transition: border 0.3s;
+		box-sizing: border-box;
 	}
 	.sliderThumbnailItem.active:after{
 		border: 3px solid #fff;
@@ -136,7 +136,7 @@
 		color: #fff;
 		line-height: 110px;
 		opacity: 0.4;
-		@include transition(all 0.3s);
+		transition: all 0.3s;
 	}
 	.sliderThumbnailPrev:hover,
 	.sliderThumbnailNext:hover {

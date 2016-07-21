@@ -1,3 +1,10 @@
+.example {
+    display: flex;
+    transition: all .5s;
+    user-select: none;
+    background: linear-gradient(to bottom, white, black);
+}
+
 html, 
 body{
 	background-color: #fff;
@@ -20,35 +27,30 @@ select {
 /* ==========================================================================
    FONTS
    ========================================================================== */        
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../font/OpenSans-Light.eot');
-    src: url('../font/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
-         url('../font/OpenSans-Light.woff') format('woff'),
-         url('../font/OpenSans-Light.ttf') format('truetype'),
-         url('../font/OpenSans-Light.svg#fontIcon') format('svg');
+@font-face{
+	font-family: 'OpenSans';
+    src: url(../font/OpenSans-Light.woff) , url(../font/OpenSans-Light.ttf) , url(../font/OpenSans-Light.svg) , url(../font/OpenSans-Light.eot);
     font-weight: normal;
-    font-style: normal;
-}
+};
 
 .fontTimes{
 	font-family: "Times New Roman", Arial, Helvetica, "微軟正黑體", "Microsoft JhengHei", "Heiti TC", "LiHei Pro", "新細明體", PMingLiU, sans-serif;
 }
 
 /* ==========================================================================
-   ICON
+   ICONS
    ========================================================================== */
 [class*='icon-']{
 	display: inline-block;
+	vertical-align: middle;
 	width: 50px;
 	height: 50px;
 	background-size: 100% auto;
-	background-position: 50% 50%;
 	
 	svg{
 		display: block;
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 }
 
@@ -66,10 +68,8 @@ pre{
     word-break: normal;
     line-height: 1.5em;
     -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
     -webkit-hyphens: none;
-    -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
 	font-size: 13px;
@@ -204,7 +204,7 @@ pre{
 .innerContent{
 	.mobile &,
 	.tablet &{
-		padding-top: 45px;
+		//padding-top: 45px;
 	}
 }
 
@@ -232,8 +232,8 @@ pre{
 		border-right: 1px solid rgba(0,0,0, 0.08);
 		border-bottom: 1px solid rgba(0,0,0, 0.08);
 		border-left: 1px solid rgba(0,0,0, 0.5);
-		@include border-radius(50%);
-		@include animation( spinner 700ms infinite linear );
+		border-radius: 50%;
+		animation:  spinner 700ms infinite linear ;
 	}
 }
 .dimBg {
@@ -320,15 +320,13 @@ a {
    ========================================================================== */
 .section{
 	position: relative;
-	width: 100%;
-	
-	.sectionInner{
-		position: relative;
-		max-width: $max-desktop-width;
-		margin: 0 auto;
-		padding: 20px;
-		@include box-sizing(border-box);
-	}
+}
+.inner{
+	position: relative;
+	max-width: $max-desktop-width;
+	margin: 0 auto;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -461,7 +459,6 @@ ul.lower-roman li{
 label {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -479,8 +476,8 @@ select{
 	border-radius: 0;
 	background-color: #fff;
 	outline: none;
-	@include box-sizing(border-box);
-	@include transition(all 200ms);
+	box-sizing: border-box;
+	transition: all 200ms;
 	-webkit-appearance: none;
 	
 	.desktop &,
@@ -557,18 +554,15 @@ input[type="checkbox"] {
 	border: 1px solid color(black, 1);
 	overflow: hidden;
 }
-input[type="checkbox"] + .checkbox:before {
-	font-family: 'fontIcon';
-	content: '\0052';
-	font-size: 20px;
-	line-height: 20px;
+input[type="checkbox"] + .checkbox [class*="icon-"] {
 	width: 0;
 	height: 100%;
+	background-size: auto 100%;
 	display: inline-block;
-	@include transition(width 0.3s);
+	transition: width 0.3s;
 	overflow: hidden;
 }
-input[type="checkbox"]:checked + .checkbox:before {
+input[type="checkbox"]:checked + .checkbox [class*="icon-"] {
 	width: 100%;
 }
 
@@ -587,8 +581,8 @@ input[type="radio"]{
 	margin-right: 10px;
 	background: #ffffff;
 	border: 1px solid color(black, 1);
-	@include box-sizing(border-box);
-	@include border-radius(20px);
+	box-sizing: border-box;
+	border-radius: 20px;
 	padding: 2px;
 	overflow: hidden;
 }
@@ -598,12 +592,12 @@ input[type="radio"] + .radiobox:before {
 	height: 100%;
 	display: block;
 	background: #000;
-	@include transition(all 0.3s);
-	@include border-radius(20px);
-	@include transform(scale(0));
+	transition: all 0.3s;
+	border-radius: 20px;
+	transform: scale(0);
 }
 input[type="radio"]:checked + .radiobox:before {
-	@include transform(scale(1));
+	transform: scale(1);
 }
 
 /* ==========================================================================
@@ -617,7 +611,7 @@ input[type="radio"]:checked + .radiobox:before {
 		.color-#{""+$color-group}-#{$i+1} {
 			color: nth($array, $i+1);
 			
-			path{
+			svg path{
 				fill: nth($array, $i+1);
 			}
 		}
@@ -641,7 +635,7 @@ input[type="radio"]:checked + .radiobox:before {
 	line-height: 1;
 	text-align: center;
 	overflow: hidden;
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 	
 	.mobile &{
 		display: block;
@@ -659,7 +653,7 @@ input[type="radio"]:checked + .radiobox:before {
 		bottom: 0;
 		background: #000;
 		top: 100%;
-		@include transition(all 0.3s);
+		transition: all 0.3s;
 	}
 	&:hover{
 		color: #fff;
@@ -699,4 +693,3 @@ input[type="radio"]:checked + .radiobox:before {
 		background: #666;
 	}
 }
-

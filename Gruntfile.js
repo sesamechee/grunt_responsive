@@ -83,18 +83,6 @@ module.exports = function (grunt) {
 				]
 			}
 		},
-		compass: {
-			dev: {
-				options: {
-					config: 'config.rb'
-				}
-			},
-			prod: {
-				options: {
-					config: 'config-prod.rb'
-				}
-			}
-		},
 		grunticon: {
 			myIcons: {
 				files: [{
@@ -109,11 +97,38 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		sass: {
+			options: {
+				sourceMap: false
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '<%= paths.css %>',
+					src: ['**/*.scss'],
+					dest: '<%= paths.cssOutput %>',
+					ext: '.css'
+				}]
+			}
+		},
+		postcss: {
+            options: {
+                map: false,
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['ie 8', 'last 3 versions']
+                    })
+                ]
+            },
+			dist: {
+			  src: '<%= paths.cssOutput %>**/*.css'
+			}
+        },
 		browserSync: {
 			bsFiles: {
 				src : [
 					"**/*.html",
-					"<%= paths.cssOutput %>**/*.scss",
+					"<%= paths.cssOutput %>**/*.css",
 					"<%= paths.jsOutput %>/*.js",
 					"<%= paths.img %>**/*.{png,jpg,gif}"
 				]
@@ -129,12 +144,16 @@ module.exports = function (grunt) {
 				tasks: ['jshint', 'bower_concat', 'concat']
 			},
 			img: {
-				files: ['<%= paths.imgOutput %>**/*.{png,jpg,gif}'],
+				files: ['<%= paths.img %>**/*.{png,jpg,gif}'],
 				tasks: ['imagemin:dev', 'pngmin']
 			},
 			css: {
 				files: ['<%= paths.css %>**/*.scss'],
-				tasks: ['compass:dev']
+				tasks: ['sass', 'postcss']
+			},
+			svg: {
+				files: ['<%= paths.img %>svg/*.svg'],
+				tasks: ['grunticon:myIcons']
 			}
 		}
 
@@ -143,8 +162,8 @@ module.exports = function (grunt) {
 	// ===========================================================================
 	// ENVIRONMENT SETTING =======================================================
 	// ===========================================================================
-	grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'imagemin:dev', 'pngmin', 'compass:dev', 'grunticon:myIcons', 'browserSync', 'watch']);
-	grunt.registerTask('prod', ['jshint', 'bower_concat', 'concat',  'uglify', 'imagemin:dev', 'pngmin', 'compass:prod', 'grunticon:myIcons']);
+	grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'imagemin:dev', 'pngmin', 'sass' , 'postcss' , 'grunticon:myIcons', 'browserSync', 'watch']);
+	grunt.registerTask('prod', ['jshint', 'bower_concat', 'concat',  'uglify', 'imagemin:dev', 'pngmin', 'sass' , 'postcss' , 'grunticon:myIcons']);
 	
 
 	// ===========================================================================
@@ -152,13 +171,14 @@ module.exports = function (grunt) {
 	// ===========================================================================
 	// we can only load these if they are in our package.json
 	// make sure you have run npm install so our app can find these
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-pngmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-browser-sync');

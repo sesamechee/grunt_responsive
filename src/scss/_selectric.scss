@@ -28,7 +28,7 @@ select{
 	border: $selectric-border-width solid $selectric-main-color;
 	background: $selectric-bg-color;
 	position: relative;
-	@include transition(border 200ms);
+	transition: border 200ms;
 	.label {
 		display: block;
 		white-space: nowrap;
@@ -56,9 +56,6 @@ select{
 		color: $selectric-secondary-color;
 		text-align: center;
 		font: 0/0 a;
-		*font: 20px/#{$selectric-inner-height} Lucida Sans Unicode,
-		Arial Unicode MS,
-		Arial;
 		&:after {
 			content: " ";
 			position: absolute;
@@ -100,7 +97,10 @@ select{
 	filter: alpha(opacity=50);
 	opacity: 0.5;
 	cursor: default;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .selectric-hide-select {
@@ -195,14 +195,20 @@ select{
 		cursor: default !important;
 		background: none !important;
 		color: #666 !important;
-		user-select: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		        user-select: none;
 	}
 	.selectric-group {
 		.selectric-group-label {
 			font-weight: bold;
 			padding-left: 10px;
 			cursor: default;
-			user-select: none;
+			-webkit-user-select: none;
+			   -moz-user-select: none;
+			    -ms-user-select: none;
+			        user-select: none;
 			background: none;
 			color: #444;
 		}

@@ -10,8 +10,20 @@ function common_init(){
 	detectBroswer();
 	menuControl();
 	
+	//Grunticon init
+	grunticon(["../images/svg/icons.data.svg.css", "../images/svg/icons.data.png.css", "../images/svg/icons.fallback.css"], grunticon.svgLoadedCallback );
+	
 	$(window).load(function(){
-		hideLoading();
+		hideLoading(function(){
+			//Inview
+			$('body').on('inview', '.inview', function(event, isInView) {
+				if (isInView) {
+					$(this).addClass('play');
+				} else {
+					//$(this).removeClass('play');
+				}
+			});
+		});
 	});
 	
 	$(window).on('resize', function(){
@@ -32,9 +44,6 @@ function common_init(){
 		inputBox = new InputHints();
 		inputBox.init( $(this) );
 	});
-	
-	//GruntIcon
-	grunticon(["../images/svg/icons.data.svg.css", "../images/svg/icons.data.png.css", "../images/svg/icons.fallback.css"], grunticon.svgLoadedCallback );
 	
 }
 
@@ -83,8 +92,8 @@ function showLoading(){
 	$('.loading').stop().fadeIn(300);
 }
 
-function hideLoading(){
-	$('.loading').stop().fadeOut(300);
+function hideLoading(callback){
+	$('.loading').stop().fadeOut(500, callback );
 }
 
 function dimBgShow(){
@@ -96,7 +105,7 @@ function dimBgHide(){
 }
 
 function menuControl(){
-	$('.mobileHeader .menuBtn').on('click', function(){
+	$('.menuBtn').on('click', function(){
 		if( $('body').hasClass('menuOpen') ){
 			$('body').removeClass('menuOpen');
 			dimBgHide();
@@ -121,7 +130,7 @@ function resetLayout(){
 }
 
 function resize(){
-	$('.mobile .content').css('min-height',$(window).height());
+	$('.content').css('min-height',$(window).height());
 }
 
 function scroll(){
@@ -139,7 +148,7 @@ function scroll(){
 }
 
 function scrollto( target ){
-	var _target = ( target === undefined )? 'body' : target;
+	var _target = ( target === undefined )? 'body' : target ;
 	$('html, body').animate({
 		scrollTop: $(_target).offset().top
 	},800 , gEasing);
@@ -161,6 +170,9 @@ function popupBox( target , config ) {
 		callbacks:{
 			open: function(){
 
+			},
+			close: function(){
+
 			}
 		}
 	};
@@ -172,7 +184,7 @@ function popupBox( target , config ) {
 function alertMsg( msg , config ) {
 	$('.alertPopup .popupContent').html(msg);
 
-	popupBox($('.alertPopup'));
+	popupBox($('.alertPopup'), config);
 }
 
 function videoPop( youtubeID , config ) {
@@ -186,6 +198,7 @@ function videoPop( youtubeID , config ) {
 			}
 		}
 	};
-
+	
+	$.extend(_settings, config);
 	popupBox($('.videoPopup'), _settings);
 }

@@ -27,12 +27,12 @@
 	padding: 10px;
 	fill: #fff;
 	visibility: hidden;
-	@include opacity(0);
-	@include transition(all 0.3s);
+	opacity: 0;
+	transition: all 0.3s;
 	
 	&.active{
 		visibility: visible;
-		@include opacity(1);
+		opacity: 1;
 	}
 	&.fixed{
 		position: fixed;

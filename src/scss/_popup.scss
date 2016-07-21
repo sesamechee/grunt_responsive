@@ -4,7 +4,7 @@
 /* overlay at start */
 .mfp-fade.mfp-bg {
 	opacity: 0;
-	@include transition(all 0.15s ease-out);
+	transition: all 0.15s ease-out;
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
@@ -18,18 +18,18 @@
 /* content at start */
 .mfp-fade.mfp-wrap .mfp-content {
 	opacity: 0;
-	@include transform( translateY(50px) );
-	@include transition(all 0.15s ease-out);
+	transform:  translateY(50px);
+	transition: all 0.15s ease-out;
 }
 /* content animate it */
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
 	opacity: 1;
-	@include transform( translateY(0) );
+	transform:  translateY(0) ;
 }
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
-	@include transform( translateY(-50px) );
+	transform:  translateY(-50px);
 }
 
 /* ==========================================================================
@@ -51,10 +51,10 @@
 		right: 30px;
 		width: 30px;
 		height: 30px;
-		@include transition(all 0.4s);
+		transition: all 0.4s;
 		
 		&:hover {
-			@include scale(0.8);
+			scale: 0.8;
 		}
 
 		&:before,
@@ -70,11 +70,11 @@
 		}
 
 		&:before {
-			@include transform( rotate(45deg) );
+			transform: rotate(45deg);
 		}
 
 		&:after {
-			@include transform( rotate(-45deg) );	
+			transform: rotate(-45deg);	
 		}
 	}
 }
