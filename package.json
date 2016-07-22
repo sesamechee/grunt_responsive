@@ -1,8 +1,15 @@
 {
-	"name": "grunt-getting-started",
+	"name": "grunt-responsive",
+	"license": "UNLICENSED",
 	"version": "0.1.0",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sesamechee/grunt_responsive.git"
+	},
 	"devDependencies": {
 		"grunt": "~0.4.4",
+		"bower": "1.7.9",
 		"grunt-bower-concat": "~1.0.0",
 		"grunt-contrib-concat": "~1.0.1",
 		"grunt-contrib-jshint": "~1.0.0",
