@@ -6,13 +6,13 @@ var gEasing = "easeInOutQuint";
 function common_init(){
 
 	new responsive();
-	
+
 	detectBroswer();
 	menuControl();
-	
+
 	//Grunticon init
 	grunticon(["../images/svg/icons.data.svg.css", "../images/svg/icons.data.png.css", "../images/svg/icons.fallback.css"], grunticon.svgLoadedCallback );
-	
+
 	$(window).load(function(){
 		hideLoading(function(){
 			//Inview
@@ -25,26 +25,26 @@ function common_init(){
 			});
 		});
 	});
-	
+
 	$(window).on('resize', function(){
 		resize();
 	});
-	
+
 	$(window).on('responsive',function(){
 		resetLayout();
 	});
-	
+
 	$(window).on('scroll',function(){
 		scroll();
 	});
-	
+
 	//form
 	$('select').selectric();
 	$('.inputBox').each(function(){
 		inputBox = new InputHints();
 		inputBox.init( $(this) );
 	});
-	
+
 }
 
 function detectBroswer(){
@@ -82,7 +82,7 @@ function detectBroswer(){
 
 	if ( IE9down ) {
 		jQuery.fx.interval = 1000 / 30;
-	} else {		
+	} else {
 		jQuery.fx.interval = 1000 / 60;
 	}
 
@@ -120,7 +120,7 @@ function menuControl(){
 		$('.content').attr('style','');
 		dimBgHide();
 	});
-	
+
 }
 
 function resetLayout(){
@@ -198,7 +198,7 @@ function videoPop( youtubeID , config ) {
 			}
 		}
 	};
-	
+
 	$.extend(_settings, config);
 	popupBox($('.videoPopup'), _settings);
 }

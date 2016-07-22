@@ -1,6 +1,6 @@
 /* ==========================================================================
    FOOTER
-   ========================================================================== */     
+   ========================================================================== */
 .footerWrapper{
 	position: relative;
 	background-color: #000;
@@ -8,7 +8,7 @@
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
-	
+
 	.footer{
 		position: relative;
 		margin:0 auto;
@@ -29,7 +29,7 @@
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.3s;
-	
+
 	&.active{
 		visibility: visible;
 		opacity: 1;
