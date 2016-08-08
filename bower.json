@@ -10,7 +10,8 @@
 		"jScrollPane" : "~2.0.23",
 		"jquery-selectric" : "~1.9.6",
 		"jquery.inview" : "1.1.2",
-		"smoothscroll-for-websites" : "~1.4.4"
+		"smoothscroll-for-websites" : "~1.4.4",
+		"slick-carousel" : "~1.6.0"
 	},
 	"private": true
 }

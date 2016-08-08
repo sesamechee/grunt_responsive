@@ -27,7 +27,6 @@
 		"postcss-simple-vars" : "~3.0.0",
 		"postcss-for" : "~2.0.3",
 		"postcss-functions" : "~2.1.0",
-		"grunt-grunticon" : "~2.2.1",
-		"grunt-browser-sync" : "~2.2.0"
+		"grunt-grunticon" : "~2.2.1"
 	}
 }

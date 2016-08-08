@@ -24,7 +24,10 @@ module.exports = function (grunt) {
 		},
 		bower_concat: {
 			all: {
-				dest: '<%= paths.jsOutput %>/bower.min.js',
+				dest: {
+					js: '<%= paths.jsOutput %>/bower.js',
+					css: '<%= paths.cssOutput %>/bower.css'
+				},
 				exclude: [] // eg.'modernizr', 'smoothscroll-for-websites'
 			}
 		},
@@ -34,7 +37,7 @@ module.exports = function (grunt) {
 			},
 			js: {
 				src: '<%= paths.js %>**/*.js',
-				dest: '<%= paths.jsOutput %>/common.min.js'
+				dest: '<%= paths.jsOutput %>/common.js'
 			}
 		},
 		uglify: {
@@ -43,8 +46,8 @@ module.exports = function (grunt) {
 			},
 			build: {
 				files: {
-					'<%= paths.jsOutput %>/bower.min.js': '<%= paths.jsOutput %>/bower.min.js',
-					'<%= paths.jsOutput %>/common.min.js': '<%= paths.jsOutput %>/common.min.js'
+					'<%= paths.jsOutput %>/bower.js': '<%= paths.jsOutput %>/bower.js',
+					'<%= paths.jsOutput %>/common.js': '<%= paths.jsOutput %>/common.js'
 				}
 			}
 		},
@@ -124,20 +127,6 @@ module.exports = function (grunt) {
 			  src: '<%= paths.cssOutput %>**/*.css'
 			}
         },
-		browserSync: {
-			bsFiles: {
-				src : [
-					"**/*.html",
-					"<%= paths.cssOutput %>**/*.css",
-					"<%= paths.jsOutput %>/*.js",
-					"<%= paths.img %>**/*.{png,jpg,gif}"
-				]
-			},
-			options: {
-				watchTask: true,
-				proxy: "<%= paths.proxy %>"
-			}
-		},
 		watch: {
 			scripts: {
 				files: '<%= paths.js %>/*.js',
@@ -162,8 +151,8 @@ module.exports = function (grunt) {
 	// ===========================================================================
 	// ENVIRONMENT SETTING =======================================================
 	// ===========================================================================
-	grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'imagemin:dev', 'pngmin', 'sass' , 'postcss' , 'grunticon:myIcons', 'browserSync', 'watch']);
-	grunt.registerTask('prod', ['jshint', 'bower_concat', 'concat',  'uglify', 'imagemin:dev', 'pngmin', 'sass' , 'postcss' , 'grunticon:myIcons']);
+	grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'imagemin:dev', 'pngmin', 'sass' , 'grunticon:myIcons', 'watch']);
+	grunt.registerTask('prod', ['jshint', 'bower_concat', 'concat',  'uglify', 'imagemin:dev', 'pngmin', 'sass' , 'grunticon:myIcons']);
 	
 
 	// ===========================================================================
@@ -181,6 +170,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-grunticon');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-browser-sync');
 
 };
